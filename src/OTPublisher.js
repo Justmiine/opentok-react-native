@@ -9,7 +9,7 @@ import { getOtrnErrorEventHandler } from './helpers/OTHelper';
 import { isConnected } from './helpers/OTSessionHelper';
 import OTContext from './contexts/OTContext';
 
-const uuid = require('uuid/v4');
+const { v4: uuidV4 } = require('uuid');
 
 class OTPublisher extends Component {
   constructor(props, context) {
@@ -17,7 +17,7 @@ class OTPublisher extends Component {
     this.state = {
       initError: null,
       publisher: null,
-      publisherId: uuid(),
+      publisherId: uuidV4(),
     };
     this.initComponent();
   }
